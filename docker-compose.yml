@@ -1,0 +1,16 @@
+# An example docker compose profile for using the Velserv docker image, on Linux the VELBUS
+# USB interface is available at:
+#
+# /dev/serial/by-id/usb-Velleman_Projects_VMB1USB_Velbus_USB_interface-if00
+#
+version: '2.4'
+
+services:
+
+  velserv:
+    restart: always
+    image: velserv
+    devices:
+        - "/dev/serial/by-id/usb-Velleman_Projects_VMB1USB_Velbus_USB_interface-if00:/dev/ttyACM0"
+    ports:
+        - "3788:3788"

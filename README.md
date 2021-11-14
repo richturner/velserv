@@ -91,3 +91,10 @@ systemctl status velserv
 # Link to the Velbus forum where Stuart (MDAR) explains how you can get this to work: 
 https://forum.velbus.eu/t/how-to-install-and-run-velserv-a-velbus-tcp-gateway/15422
 
+# Docker image
+
+* Build image: `docker build -t velvserv .`
+* Run (default port 3788): `docker run -d --restart=always -p 3788:3788 --device=/dev/serial/by-id/usb-Velleman_Projects_VMB1USB_Velbus_USB_interface-if00:/dev/ttyACM0 velserv
+* Run (docker compose): see [docker-compose.yml](./docker-compose.yml)
+
+
